@@ -37,3 +37,20 @@ dependencies {
     compileOnly 'org.projectlombok:lombok' // 반복적인 메서드 작성 작업을 줄여주는 롬복
     annotationProcessor 'org.projectlombok:lombok'
 }
+
+dependencies {
+    // 1. JUnit 5 의존성 (Jupiter)
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+
+    // 2. Gradle 8/9 버전에서 테스트 실행을 위해 필수적인 런처
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// 3. Gradle에게 JUnit Platform을 사용한다고 명시
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
