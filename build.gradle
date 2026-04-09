@@ -1,4 +1,4 @@
-plugins {
+    plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.0' // Spring Boot 버전 3.4.0으로.
     id 'io.spring.dependency-management' version '1.1.0'
@@ -54,3 +54,12 @@ test {
 dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+    dependencies {
+        // 이 줄이 있어야 JUnit 5(jupiter)를 사용할 수 있습니다.
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    test {
+        // JUnit 5 플랫폼을 사용하겠다는 선언입니다.
+        useJUnitPlatform()
+    }
